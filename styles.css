@@ -332,6 +332,13 @@ body {
   margin-bottom: 4rem;
 }
 
+/* When two .scene-body paragraphs sit back-to-back, tighten the
+   gap between them. The 4rem margin is kept for the last one so
+   it still separates from the next major element. */
+.scene-body:has(+ .scene-body) {
+  margin-bottom: 1.25rem;
+}
+
 .scene-punch {
   margin-top: 3rem;
   font-size: clamp(1.3rem, 2.6vw, 2rem);
