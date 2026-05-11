@@ -338,7 +338,7 @@ body {
   font-style: italic;
   line-height: 1.3;
   color: #f0bf89;
-  max-width: 38rem;
+  max-width: 80vw;
 }
 .scene-punch em { font-style: italic; }
 
