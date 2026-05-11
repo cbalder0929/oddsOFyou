@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>README — The Odds of You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ------- Word-document feel ------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      background: #d9d9d9;
+      color: #1b1b1b;
+      line-height: 1.55;
+      min-height: 100vh;
+      padding: 4rem 1.25rem 6rem;
+    }
+
+    /* The "page" sheet */
+    .page {
+      max-width: 8.5in;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 1in 1in 1.25in;
+      box-shadow:
+        0 1px 0 rgba(0,0,0,0.08),
+        0 12px 30px rgba(0,0,0,0.18),
+        0 30px 80px rgba(0,0,0,0.15);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    /* Back-to-site button (sticky top-left of viewport) */
+    .back-btn {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.6rem 1.15rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f5f1e8;
+      text-decoration: none;
+      background: rgba(8, 18, 30, 0.92);
+      border: 1px solid rgba(240, 191, 137, 0.55);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+    .back-btn:hover {
+      color: #02060c;
+      background: #f0bf89;
+      border-color: #f0bf89;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(240, 191, 137, 0.35);
+    }
+    .back-arrow {
+      font-size: 0.95rem;
+      transition: transform 0.3s ease;
+    }
+    .back-btn:hover .back-arrow {
+      transform: translateX(-2px);
+    }
+
+    /* Document title block */
+    .doc-title {
+      font-family: 'Cambria', 'Georgia', serif;
+      font-size: 28pt;
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 0.35rem;
+      color: #111;
+      text-align: center;
+    }
+    .doc-subtitle {
+      font-family: 'Cambria', 'Georgia', serif;
+      font-size: 14pt;
+      font-style: italic;
+      color: #444;
+      margin: 0 0 0.5rem;
+      text-align: center;
+      font-weight: 400;
+    }
+    .doc-byline {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      color: #555;
+      text-align: center;
+      margin: 0 0 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid #c0c0c0;
+      margin: 0 0 1.5rem;
+    }
+
+    /* Headings */
+    h2 {
+      font-family: 'Cambria', 'Georgia', serif;
+      font-size: 16pt;
+      font-weight: 700;
+      color: #1f3a5f; /* Word's "Heading 1" blue */
+      margin: 1.8rem 0 0.6rem;
+      line-height: 1.2;
+    }
+
+    /* Body paragraphs */
+    p {
+      font-size: 11.5pt;
+      margin: 0 0 0.85rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    p em, em {
+      font-style: italic;
+    }
+
+    /* Bulleted lists */
+    ul {
+      margin: 0 0 1rem 1.6rem;
+      padding: 0;
+    }
+    ul li {
+      font-size: 11.5pt;
+      margin: 0 0 0.4rem;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    /* Small caps style for the byline (optional) */
+    .smallcaps {
+      font-variant: small-caps;
+      letter-spacing: 0.04em;
+    }
+
+    /* Footer note */
+    .page-footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #d6d6d6;
+      font-size: 9.5pt;
+      color: #888;
+      text-align: center;
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 4.5rem 0.75rem 3rem; }
+      .page { padding: 1.5rem 1.1rem 2rem; border-radius: 0; }
+      .doc-title { font-size: 22pt; }
+      .doc-subtitle { font-size: 12pt; }
+      h2 { font-size: 14pt; }
+      p, ul li { font-size: 11pt; text-align: left; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; }
+      .back-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-btn">
+    <span class="back-arrow" aria-hidden="true">←</span>
+    Back to Site
+  </a>
+
+  <article class="page">
+
+    <h1 class="doc-title">The Odds of You</h1>
+    <p class="doc-subtitle">An Interactive Reflection on Existing, Working, and Graduating in America</p>
+    <p class="doc-byline"><span class="smallcaps">Charles Whitehurst</span> &nbsp; | &nbsp; Interactive Media Project</p>
+    <hr class="rule" />
+
+    <h2>Introduction</h2>
+    <p>This project started as something different. I had a complex vision and figured I would outsource the heavy lifting to AI tools, get something cinematic, and call it a day. What actually happened was a series of attempts that fell short of the picture in my head &mdash; because what I had imagined required years of Blender experience, 3D animation, and frankly a kind of artistic instinct that no AI tool gives you for free. Somewhere in that process the meaning of the project shifted. I had been building a tropical scene where the user dives from a bright surface into deep, dark water, and the metaphor became obvious: this is what life actually feels like. You exist briefly, in a vast indifferent ocean, and only the adaptable thrive. That realization is what the final project is built around.</p>
+
+    <h2>Who is this for?</h2>
+    <p>The target audience is U.S. college students aged 18&ndash;25, particularly first-generation students, working students, and recent graduates entering the job market. More specifically: people who are exhausted, who feel like they are grinding without traction, and who quietly suspect that the system is rigged against them. The project is designed to meet that person where they are &mdash; not with toxic positivity, but with hard numbers that reframe their situation. I connect with this audience the same way I would in a conversation with a friend: clean visual storytelling, an honest tone, and statistics that respect their intelligence. The interactive scroll format also matters here &mdash; this generation does not read static posters. They scroll, and the medium itself becomes part of the message.</p>
+
+    <h2>The Problem</h2>
+    <p>Young adults in America are experiencing record levels of burnout, anxiety, and disillusionment. The American Psychological Association's 2023 <em>Stress in America</em> report found that adults aged 18&ndash;34 consistently report the highest stress levels of any age group, and that financial pressures and uncertainty about the future are the dominant drivers. At the same time, job market data shows that the average corporate job posting receives hundreds of applications, and only 2&ndash;3% of cold applicants reach the interview stage. The result is a generation that works hard, plays by the rules, and still feels like they are losing &mdash; without the perspective to recognize that the difficulty is structural, not personal. If this disconnect is not addressed, the cost is real: more young people checking out, more mental health deterioration, and less of the persistence that actually moves a life forward.</p>
+
+    <p>The reframe this project offers is not <em>'be grateful and shut up.'</em> It is <em>'you are statistically extraordinary already &mdash; so the grind is worth it, because you are already winning the only lottery that matters.'</em></p>
+
+    <h2>Research</h2>
+    <p>Four core statistics drive the experience, each surfacing at a different depth of the scroll dive:</p>
+    <ul>
+      <li><strong>1 in 400 trillion</strong> &mdash; the estimated odds of any specific person being born, factoring in ancestry, gamete pairing, and lineage continuity (Dr. Ali Binazir, Harvard Medical School).</li>
+      <li><strong>~16%</strong> &mdash; share of the global population that lives in a country classified as 'developed' by the United Nations.</li>
+      <li><strong>~7%</strong> &mdash; share of the global adult population that holds a four-year college degree (World Bank / OECD education data).</li>
+      <li><strong>2&ndash;3%</strong> &mdash; share of cold job applications that reach the interview stage (multiple 2024&ndash;2026 recruiting industry reports).</li>
+    </ul>
+    <p>Each number, on its own, is interesting. Stacked, they tell a story: the user is already an outlier on every dimension. The grind they are inside of is not a failure state &mdash; it is the final, hardest filter, and the only one they have full control over.</p>
+
+    <h2>How the project meets the assignment criteria</h2>
+    <p>The brief asks for an interactive work on an issue with political, societal, or global relevance. Youth mental health and the disconnect between effort and outcome in the U.S. labor market is a societal issue with measurable, sourced impact. The project is delivered as an interactive website built in HTML, CSS, and JavaScript &mdash; meeting the default technical option. The fundamental coding logic involved includes scroll-position tracking, parallax layer transforms, opacity interpolation, <code>requestAnimationFrame</code>-throttled event handling, and a sticky viewport pattern for the cinematic dive &mdash; all written and reasoned through rather than copy-pasted. The computational vocabulary (parallax, sticky positioning, scroll progress as a normalized 0&ndash;1 value, transform compositing) is documented in the project's source comments and in this write-up.</p>
+
+    <h2>AI Tools Used</h2>
+    <p>This project was built with significant AI assistance, and the process itself became one of the lessons. The tools were used as follows:</p>
+    <ul>
+      <li><strong>Claude (Anthropic)</strong> &mdash; project planning, initial code scaffolding for the HTML/CSS/JS scroll system, and writing assistance on this document. Claude is strongest at starting projects and explaining architecture.</li>
+      <li><strong>Codex CLI</strong> &mdash; debugging and iterating on specific functions once the scaffold was in place.</li>
+      <li><strong>ChatGPT</strong> &mdash; image generation for the tropical island and underwater scenes, then edited in Photoshop for color matching and waterline blending.</li>
+      <li><strong>Copilot</strong> &mdash; quick reference lookups during coding via keyboard shortcuts.</li>
+    </ul>
+    <p>All AI outputs were modified, edited, and integrated by hand. The statistics, the framing, the narrative tone, and the final architectural decisions are mine. The honest takeaway from the build process: AI tools have real limits, and the gap between <em>'what you can imagine'</em> and <em>'what you can ship'</em> still requires human judgment, taste, and follow-through. Discovering that was, in a way, part of the project's point.</p>
+
+    <h2>Executive Summary</h2>
+    <p><em>The Odds of You</em> is an interactive scroll experience that takes the user from a sunlit tropical surface down into the deep ocean. At four depths, statistics surface: the odds of being born, of being born somewhere stable, of graduating college, and of getting hired. The combined effect is a reframe &mdash; the user is already statistically extraordinary, and the only filter left is the one they control. The project is built in HTML, CSS, and JavaScript, uses real sourced data, and is targeted at the exact demographic most at risk of giving up: young Americans who are working hard and feeling invisible. The final message is simple, and it is the one I needed to hear myself while I was building it: <em>you have already won the only lottery that matters. Don't waste the ticket.</em></p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li>Binazir, A. <em>"What Are the Chances of Your Coming Into Being?"</em> TEDx Talk and Harvard Medical School essay.</li>
+      <li>American Psychological Association. <em>Stress in America 2023: A Nation Recovering from Collective Trauma.</em></li>
+      <li>United Nations Department of Economic and Social Affairs. <em>World Population Prospects</em>, 2024 revision.</li>
+      <li>OECD / World Bank Education Statistics. Tertiary educational attainment, global indicators, 2024.</li>
+      <li>Industry recruiting reports on job application-to-interview conversion rates, 2024&ndash;2026.</li>
+    </ul>
+
+    <p class="page-footer">&mdash; end of document &mdash;</p>
+  </article>
+
+</body>
+</html>

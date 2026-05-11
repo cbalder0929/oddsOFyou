@@ -68,6 +68,87 @@ body {
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
+/* ---------- README button ---------- */
+.readme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.15rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f5f1e8;
+  text-decoration: none;
+  background: rgba(8, 18, 30, 0.45);
+  border: 1px solid rgba(240, 191, 137, 0.55);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.readme-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(240, 191, 137, 0.14) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.readme-btn:hover {
+  color: #02060c;
+  background: #f0bf89;
+  border-color: #f0bf89;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(240, 191, 137, 0.28);
+}
+
+.readme-btn:hover::after {
+  transform: translateX(100%);
+}
+
+.readme-btn-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f0bf89;
+  box-shadow: 0 0 10px rgba(240, 191, 137, 0.8);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.readme-btn:hover .readme-btn-dot {
+  background: #02060c;
+  box-shadow: none;
+}
+
+.readme-btn-arrow {
+  font-size: 0.85rem;
+  margin-left: 0.15rem;
+  transition: transform 0.3s ease;
+}
+
+.readme-btn:hover .readme-btn-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Larger variant at the end of the story */
+.readme-btn-large {
+  margin-top: 3rem;
+  padding: 0.95rem 1.65rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.28em;
+  border-width: 1.5px;
+}
+
 /* ---------- Reveal-on-scroll ---------- */
 .reveal {
   opacity: 0;
